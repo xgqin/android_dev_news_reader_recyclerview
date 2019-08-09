@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.lv_news_list);
 
         initData();
-        /*4. 使用Cursor构造NewsAdapter所需List */
 
         newsAdapter = new NewsAdapter(
                 MainActivity.this,
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 newsList
         );
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(newsAdapter);
     }
